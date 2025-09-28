@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1021962135763",
+    "project_id": "promptgen-bcea4",
+    "storage_bucket": "promptgen-bcea4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021962135763:android:1b9cfec9cc5fbad6bacc26",
+        "android_client_info": {
+          "package_name": "com.buddingintents.promptgen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7z1tXQTRfrx40NoYc_Z2Lr-xw_6R-_dw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
