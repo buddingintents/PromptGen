@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text Dimensions -->
+    <dimen name="text_size_heading1">32sp</dimen>
+    <dimen name="text_size_heading2">24sp</dimen>
+    <dimen name="text_size_heading3">20sp</dimen>
+    <dimen name="text_size_body1">16sp</dimen>
+    <dimen name="text_size_body2">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">12dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">20dp</dimen>
+    <dimen name="spacing_xxlarge">24dp</dimen>
+    <dimen name="spacing_huge">32dp</dimen>
+
+    <!-- Layout Dimensions -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+
+    <!-- UI Element Sizes -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_height_large">56dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_height_large">120dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="corner_radius_medium">12dp</dimen>
+    <dimen name="corner_radius_large">16dp</dimen>
+    <dimen name="corner_radius_xlarge">20dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_card">8dp</dimen>
+    <dimen name="elevation_button">4dp</dimen>
+    <dimen name="elevation_fab">12dp</dimen>
+
+    <!-- Border Width -->
+    <dimen name="border_width_thin">1dp</dimen>
+    <dimen name="border_width_medium">2dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="icon_size_large">48dp</dimen>
+
+    <!-- Card Dimensions -->
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_padding_large">20dp</dimen>
+</resources>

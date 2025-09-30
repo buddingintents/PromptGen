@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.buddingintents.promptgen.app-mergeDebugResources-51:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.buddingintents.promptgen.app-mergeDebugResources-65:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\shiva\\.gradle\\caches\\9.0-milestone-1\\transforms\\6c253b0ff8c78da958fb6eb7aea89310\\transformed\\material-1.9.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\shiva\\.gradle\\caches\\8.9\\transforms\\c677eed51e64504b58987635bf44f820\\transformed\\material-1.12.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

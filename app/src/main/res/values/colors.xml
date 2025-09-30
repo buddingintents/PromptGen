@@ -1,5 +1,57 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
+    <!-- Primary Brand Colors -->
+    <color name="primary_purple">#7B68EE</color>
+    <color name="primary_dark">#6A5ACD</color>
+    <color name="primary_light">#9370DB</color>
+    <color name="accent_purple">#8A2BE2</color>
+
+    <!-- Background Colors -->
+    <color name="background_gradient_start">#8A63D2</color>
+    <color name="background_gradient_end">#6B46C1</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="surface_light">#F8F9FA</color>
+    <color name="background_main">#F5F3FF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_hint">#9CA3AF</color>
+
+    <!-- Button Colors -->
+    <color name="button_primary">#7C3AED</color>
+    <color name="button_primary_pressed">#6D28D9</color>
+    <color name="button_secondary">#E5E7EB</color>
+    <color name="button_secondary_pressed">#D1D5DB</color>
+
+    <!-- UI Element Colors -->
+    <color name="shadow">#00000020</color>
+    <color name="border_light">#E5E7EB</color>
+    <color name="divider">#F3F4F6</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="input_background">#F9FAFB</color>
+
+    <!-- Status Colors -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+
+    <!-- Transparent Colors -->
+    <color name="transparent">#00000000</color>
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+
+    <!-- Material Design Colors for Compatibility -->
+    <color name="colorPrimary">@color/primary_purple</color>
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <color name="colorAccent">@color/accent_purple</color>
+    <color name="colorOnPrimary">@color/text_on_primary</color>
+    <color name="colorSurface">@color/surface_white</color>
+    <color name="colorOnSurface">@color/text_primary</color>
+    <color name="colorBackground">@color/background_main</color>
+    <color name="colorOnBackground">@color/text_primary</color>
+
+    <color name="purple_500">#7B68EE</color>   <!-- maps to primary_purple -->
+    <color name="purple_700">#6A5ACD</color>   <!-- maps to primary_dark -->
 </resources>

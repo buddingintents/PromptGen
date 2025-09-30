@@ -1,23 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="16dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ads="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background_main" android:padding="20dp">
+    <!-- Header Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/CardView.Elevated"
+        android:layout_marginBottom="20dp">
 
-    <!-- This ListView provides the UI for displaying the history items -->
-    <ListView
-        android:id="@+id/listHistory"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:divider="@android:color/darker_gray"
-    android:dividerHeight="1dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvHistoryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prompt History"
+                style="@style/Text.Heading2"
+                android:gravity="center"
+                android:textColor="@color/primary_purple"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your recent prompts and generations"
+                style="@style/Text.Body2"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- List of records -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        style="@style/CardView.Elevated"
+        android:layout_marginBottom="16dp">
+
+        <ListView
+            android:id="@+id/listHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/divider"
+            android:dividerHeight="1dp"
+            android:listSelector="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:background="@color/surface_white" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Banner Ad at the bottom -->
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2020561089374332/1141807498"/>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 </LinearLayout>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.buddingintents.promptgen.app-mergeDebugResources-51:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.buddingintents.promptgen.app-mergeDebugResources-65:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\shiva\\.gradle\\caches\\9.0-milestone-1\\transforms\\5c3339c57ee5dc6194c6c3e9f8606a66\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\shiva\\.gradle\\caches\\8.9\\transforms\\5a380c53bddfb85992236d9ede916b89\\transformed\\appcompat-1.7.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

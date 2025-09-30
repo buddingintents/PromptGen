@@ -1,86 +1,106 @@
 [
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/drawable_btn_secondary.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/drawable/btn_secondary.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/layout_activity_settings.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/layout/activity_settings.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/drawable_bg_gradient.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/drawable/bg_gradient.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/layout_activity_history.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/layout/activity_history.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/drawable_card_background.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/drawable/card_background.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/layout_activity_main.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/layout/activity_main.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/layout_item_history.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/layout/item_history.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/drawable_input_background.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/drawable/input_background.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/layout_activity_main.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/layout/activity_main.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/layout_item_history.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/layout/item_history.xml"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/layout_activity_history.xml.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/layout/activity_history.xml"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.buddingintents.promptgen.app-debug-53:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.buddingintents.promptgen.app-main-55:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.buddingintents.promptgen.app-debug-67:/drawable_btn_primary.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/drawable/btn_primary.xml"
+    },
+    {
+        "merged": "com.buddingintents.promptgen.app-debug-67:/layout_activity_settings.xml.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.buddingintents.promptgen.app-debug-67:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.buddingintents.promptgen.app-main-69:/mipmap-hdpi/ic_launcher_foreground.webp"
     }
 ]

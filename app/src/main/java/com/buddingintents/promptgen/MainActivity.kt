@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import android.text.method.ScrollingMovementMethod
 import android.view.View
+import android.widget.ProgressBar
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.analytics
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         btnCopy = findViewById(R.id.btnCopy)
         btnSettings = findViewById(R.id.btnSettings)
         tvTheme = findViewById(R.id.tvTheme)
-        progress = findViewById(R.id.progress)
+        progress = findViewById(R.id.progressBar)
 
         repo = LLMRepository(this)
 

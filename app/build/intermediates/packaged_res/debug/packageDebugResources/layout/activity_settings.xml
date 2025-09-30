@@ -1,33 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background_main" android:padding="20dp" android:scrollbars="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView android:text="Default Provider" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-
-        <Spinner
-            android:id="@+id/spinnerProvider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView android:text="API Key / Bearer token" android:layout_marginTop="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <EditText android:id="@+id/etApiKey"
+        <!-- Header Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Paste your API key here"/>
+            style="@style/CardView.Elevated"
+            android:layout_marginBottom="24dp">
 
-        <TextView android:text="Custom Endpoint (optional)" android:layout_marginTop="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <EditText android:id="@+id/etEndpoint"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    style="@style/Text.Heading2"
+                    android:gravity="center"
+                    android:textColor="@color/primary_purple"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Configure your AI provider and preferences"
+                    style="@style/Text.Body2"
+                    android:gravity="center" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Provider Settings Card -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="https://api.openai.com/v1/chat/completions (or custom)"/>
+            style="@style/CardView.Elevated"
+            android:layout_marginBottom="20dp">
 
-        <Button android:id="@+id/btnSave" android:text="Save" android:layout_marginTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/tvHelp" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="Presets: OpenAI (chat completions), HuggingFace inference, Cohere. You can also paste a custom endpoint and token."/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AI Provider"
+                    style="@style/Text.Body1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerProvider"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/input_background"
+                    android:padding="16dp"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="API Key / Bearer Token"
+                    style="@style/Text.Body1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enter your API key for the selected provider"
+                    style="@style/Text.Caption"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etApiKey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Paste your API key here"
+                    android:inputType="textPassword"
+                    style="@style/EditText.Modern"
+                    android:layout_marginBottom="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Endpoint (Optional)"
+                    style="@style/Text.Body1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Leave empty to use default provider endpoint"
+                    style="@style/Text.Caption"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etEndpoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="https://api.example.com/v1/chat/completions"
+                    android:inputType="textUri"
+                    style="@style/EditText.Modern" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Settings"
+            style="@style/Button.Primary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Info Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/CardView.Elevated"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Provider Information"
+                    style="@style/Text.Body1"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-  OpenAI: Uses GPT-4o for high-quality prompts
+HuggingFace: Free tier with various models
+
+Cohere: Great for business/marketing prompts
+
+Perplexity: Research-oriented prompts
+
+Custom: Use your own API endpoint"
+                    style="@style/Text.Body2"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 </ScrollView>
