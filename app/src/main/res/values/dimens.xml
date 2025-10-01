@@ -54,4 +54,25 @@
     <dimen name="card_margin">8dp</dimen>
     <dimen name="card_padding">16dp</dimen>
     <dimen name="card_padding_large">20dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_tiny">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+
+    <!-- Controls -->
+    <dimen name="button_height_small">40dp</dimen>
+    <dimen name="spinner_height">48dp</dimen>
+    <dimen name="edittext_height">48dp</dimen>
+
+    <!-- Card -->
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
 </resources>

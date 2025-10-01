@@ -54,4 +54,22 @@
 
     <color name="purple_500">#7B68EE</color>   <!-- maps to primary_purple -->
     <color name="purple_700">#6A5ACD</color>   <!-- maps to primary_dark -->
+
+    <!-- Primary Colors -->
+    <color name="accent_color">#45B7D1</color>
+
+    <!-- Text Colors -->
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Border Colors -->
+    <color name="border_color">#E8E8E8</color>
+    <color name="divider_color">#EEEEEE</color>
+
+    <!-- Status Colors -->
+    <color name="success_color">#27AE60</color>
+    <color name="warning_color">#F39C12</color>
+    <color name="error_color">#E74C3C</color>
+
+
+    <color name="secondary_color">#4ECDC4</color>
 </resources>

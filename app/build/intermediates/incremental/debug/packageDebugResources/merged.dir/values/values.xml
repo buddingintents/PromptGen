@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="accent_color">#45B7D1</color>
     <color name="accent_purple">#8A2BE2</color>
     <color name="background_gradient_end">#6B46C1</color>
     <color name="background_gradient_start">#8A63D2</color>
     <color name="background_main">#F5F3FF</color>
+    <color name="border_color">#E8E8E8</color>
     <color name="border_light">#E5E7EB</color>
     <color name="button_primary">#7C3AED</color>
     <color name="button_primary_pressed">#6D28D9</color>
@@ -19,7 +21,9 @@
     <color name="colorPrimaryDark">@color/primary_dark</color>
     <color name="colorSurface">@color/surface_white</color>
     <color name="divider">#F3F4F6</color>
+    <color name="divider_color">#EEEEEE</color>
     <color name="error">#EF4444</color>
+    <color name="error_color">#E74C3C</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="input_background">#F9FAFB</color>
     <color name="overlay_dark">#80000000</color>
@@ -29,20 +33,27 @@
     <color name="primary_purple">#7B68EE</color>
     <color name="purple_500">#7B68EE</color>
     <color name="purple_700">#6A5ACD</color>
+    <color name="secondary_color">#4ECDC4</color>
     <color name="shadow">#00000020</color>
     <color name="success">#10B981</color>
+    <color name="success_color">#27AE60</color>
     <color name="surface_light">#F8F9FA</color>
     <color name="surface_white">#FFFFFF</color>
     <color name="text_hint">#9CA3AF</color>
     <color name="text_on_primary">#FFFFFF</color>
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#6B7280</color>
+    <color name="text_white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="warning">#F59E0B</color>
+    <color name="warning_color">#F39C12</color>
     <dimen name="border_width_medium">2dp</dimen>
     <dimen name="border_width_thin">1dp</dimen>
     <dimen name="button_height">48dp</dimen>
     <dimen name="button_height_large">56dp</dimen>
+    <dimen name="button_height_small">40dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_margin">8dp</dimen>
     <dimen name="card_padding">16dp</dimen>
     <dimen name="card_padding_large">20dp</dimen>
@@ -50,6 +61,7 @@
     <dimen name="corner_radius_medium">12dp</dimen>
     <dimen name="corner_radius_small">8dp</dimen>
     <dimen name="corner_radius_xlarge">20dp</dimen>
+    <dimen name="edittext_height">48dp</dimen>
     <dimen name="elevation_button">4dp</dimen>
     <dimen name="elevation_card">8dp</dimen>
     <dimen name="elevation_fab">12dp</dimen>
@@ -58,6 +70,10 @@
     <dimen name="icon_size_small">24dp</dimen>
     <dimen name="input_height">56dp</dimen>
     <dimen name="input_height_large">120dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_tiny">2dp</dimen>
     <dimen name="padding_large">20dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_small">8dp</dimen>
@@ -69,12 +85,17 @@
     <dimen name="spacing_tiny">4dp</dimen>
     <dimen name="spacing_xlarge">20dp</dimen>
     <dimen name="spacing_xxlarge">24dp</dimen>
+    <dimen name="spinner_height">48dp</dimen>
     <dimen name="text_size_body1">16sp</dimen>
     <dimen name="text_size_body2">14sp</dimen>
     <dimen name="text_size_caption">12sp</dimen>
     <dimen name="text_size_heading1">32sp</dimen>
     <dimen name="text_size_heading2">24sp</dimen>
     <dimen name="text_size_heading3">20sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_tiny">10sp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
     <string name="app_name">Prompt Enhancer</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
@@ -83,7 +104,22 @@
     <string name="google_app_id" translatable="false">1:1021962135763:android:1b9cfec9cc5fbad6bacc26</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA7z1tXQTRfrx40NoYc_Z2Lr-xw_6R-_dw</string>
     <string name="google_storage_bucket" translatable="false">promptgen-bcea4.firebasestorage.app</string>
+    <string name="history_empty">No history yet. Generate some prompts to see them here!</string>
+    <string name="history_subtitle">Your recent prompt generations:</string>
+    <string name="history_title">Prompt History</string>
+    <string name="missing_endpoint">No endpoint configured. Open Settings.</string>
     <string name="project_id" translatable="false">promptgen-bcea4</string>
+    <string name="provider_cohere_free">Cohere (free)</string>
+    <string name="provider_cohere_preset">Cohere (preset)</string>
+    <string name="provider_custom">Custom</string>
+    <string name="provider_gemini_free">Google Gemini (free)</string>
+    <string name="provider_hf_community">Hugging Face (community)</string>
+    <string name="provider_hf_preset">HuggingFace (preset)</string>
+    <string name="provider_on_device">On-Device (local)</string>
+    <string name="provider_openai">OpenAI (preset)</string>
+    <string name="provider_openrouter_free">OpenRouter (free/credits)</string>
+    <string name="provider_perplexity">Perplexity</string>
+    <string name="settings_saved">Settings saved</string>
     <style name="Button.Primary" parent="Widget.Material3.Button">
         <item name="android:background">@drawable/btn_primary</item>
         <item name="android:textColor">@color/text_on_primary</item>

@@ -6,27 +6,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.buddingintents.promptgen.R;
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
-
-  @NonNull
-  public final LinearLayout actionButtons;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final AdView adView;
@@ -47,60 +44,77 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnShare;
 
   @NonNull
-  public final LinearLayout buttonRow;
+  public final MaterialCardView cardControls;
 
   @NonNull
-  public final CardView cardInput;
+  public final MaterialCardView cardInput;
 
   @NonNull
-  public final CardView cardOutput;
+  public final MaterialCardView cardOutput;
 
   @NonNull
   public final EditText etInput;
+
+  /**
+   * This binding is not available in all configurations.
+   * <p>
+   * Present:
+   * <ul>
+   *   <li>layout-land/</li>
+   * </ul>
+   *
+   * Absent:
+   * <ul>
+   *   <li>layout/</li>
+   * </ul>
+   */
+  @Nullable
+  public final Guideline guidelineVerticalCenter;
 
   @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
-  public final TextView tvAppTitle;
-
-  @NonNull
   public final TextView tvOutput;
 
   @NonNull
-  public final TextView tvSubtitle;
+  public final TextView tvProviderStatus;
 
   @NonNull
   public final TextView tvTheme;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull LinearLayout actionButtons,
-      @NonNull AdView adView, @NonNull Button btnCopy, @NonNull Button btnGenerate,
-      @NonNull Button btnHistory, @NonNull Button btnSettings, @NonNull Button btnShare,
-      @NonNull LinearLayout buttonRow, @NonNull CardView cardInput, @NonNull CardView cardOutput,
-      @NonNull EditText etInput, @NonNull ProgressBar progressBar, @NonNull TextView tvAppTitle,
-      @NonNull TextView tvOutput, @NonNull TextView tvSubtitle, @NonNull TextView tvTheme) {
+  @NonNull
+  public final TextView tvTitle;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull AdView adView,
+      @NonNull Button btnCopy, @NonNull Button btnGenerate, @NonNull Button btnHistory,
+      @NonNull Button btnSettings, @NonNull Button btnShare, @NonNull MaterialCardView cardControls,
+      @NonNull MaterialCardView cardInput, @NonNull MaterialCardView cardOutput,
+      @NonNull EditText etInput, @Nullable Guideline guidelineVerticalCenter,
+      @NonNull ProgressBar progressBar, @NonNull TextView tvOutput,
+      @NonNull TextView tvProviderStatus, @NonNull TextView tvTheme, @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.actionButtons = actionButtons;
     this.adView = adView;
     this.btnCopy = btnCopy;
     this.btnGenerate = btnGenerate;
     this.btnHistory = btnHistory;
     this.btnSettings = btnSettings;
     this.btnShare = btnShare;
-    this.buttonRow = buttonRow;
+    this.cardControls = cardControls;
     this.cardInput = cardInput;
     this.cardOutput = cardOutput;
     this.etInput = etInput;
+    this.guidelineVerticalCenter = guidelineVerticalCenter;
     this.progressBar = progressBar;
-    this.tvAppTitle = tvAppTitle;
     this.tvOutput = tvOutput;
-    this.tvSubtitle = tvSubtitle;
+    this.tvProviderStatus = tvProviderStatus;
     this.tvTheme = tvTheme;
+    this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -125,12 +139,6 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.actionButtons;
-      LinearLayout actionButtons = ViewBindings.findChildViewById(rootView, id);
-      if (actionButtons == null) {
-        break missingId;
-      }
-
       id = R.id.adView;
       AdView adView = ViewBindings.findChildViewById(rootView, id);
       if (adView == null) {
@@ -167,20 +175,20 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.buttonRow;
-      LinearLayout buttonRow = ViewBindings.findChildViewById(rootView, id);
-      if (buttonRow == null) {
+      id = R.id.cardControls;
+      MaterialCardView cardControls = ViewBindings.findChildViewById(rootView, id);
+      if (cardControls == null) {
         break missingId;
       }
 
       id = R.id.cardInput;
-      CardView cardInput = ViewBindings.findChildViewById(rootView, id);
+      MaterialCardView cardInput = ViewBindings.findChildViewById(rootView, id);
       if (cardInput == null) {
         break missingId;
       }
 
       id = R.id.cardOutput;
-      CardView cardOutput = ViewBindings.findChildViewById(rootView, id);
+      MaterialCardView cardOutput = ViewBindings.findChildViewById(rootView, id);
       if (cardOutput == null) {
         break missingId;
       }
@@ -191,15 +199,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.guideline_vertical_center;
+      Guideline guidelineVerticalCenter = ViewBindings.findChildViewById(rootView, id);
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
-        break missingId;
-      }
-
-      id = R.id.tvAppTitle;
-      TextView tvAppTitle = ViewBindings.findChildViewById(rootView, id);
-      if (tvAppTitle == null) {
         break missingId;
       }
 
@@ -209,9 +214,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvSubtitle;
-      TextView tvSubtitle = ViewBindings.findChildViewById(rootView, id);
-      if (tvSubtitle == null) {
+      id = R.id.tvProviderStatus;
+      TextView tvProviderStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvProviderStatus == null) {
         break missingId;
       }
 
@@ -221,9 +226,15 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, actionButtons, adView, btnCopy,
-          btnGenerate, btnHistory, btnSettings, btnShare, buttonRow, cardInput, cardOutput, etInput,
-          progressBar, tvAppTitle, tvOutput, tvSubtitle, tvTheme);
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, adView, btnCopy, btnGenerate,
+          btnHistory, btnSettings, btnShare, cardControls, cardInput, cardOutput, etInput,
+          guidelineVerticalCenter, progressBar, tvOutput, tvProviderStatus, tvTheme, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

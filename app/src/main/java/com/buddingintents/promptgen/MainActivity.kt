@@ -1,4 +1,3 @@
-
 package com.buddingintents.promptgen
 
 import android.content.ClipData
@@ -22,14 +21,11 @@ import com.google.firebase.analytics.analytics
 import com.google.firebase.analytics.logEvent
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.android.gms.ads.MobileAds
-
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.LoadAdError
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,15 +36,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSettings: Button
     private lateinit var tvTheme: TextView
     private lateinit var progress: ProgressBar
-
     private lateinit var repo: LLMRepository
-
     private lateinit var btnShare: Button
-
     private lateinit var btnHistory: Button
+    private lateinit var tvProviderStatus: TextView
 
     val analytics = Firebase.analytics
-
     var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,13 +56,22 @@ class MainActivity : AppCompatActivity() {
             println("AdMob initialized: $initializationStatus")
         }
 
-
         val adView: AdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
-
         loadInterstitialAd()
 
+        initializeViews()
+        setupClickListeners()
+        updateProviderStatus()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateProviderStatus()
+    }
+
+    private fun initializeViews() {
         etInput = findViewById(R.id.etInput)
         btnGenerate = findViewById(R.id.btnGenerate)
         tvOutput = findViewById(R.id.tvOutput)
@@ -77,15 +79,15 @@ class MainActivity : AppCompatActivity() {
         btnSettings = findViewById(R.id.btnSettings)
         tvTheme = findViewById(R.id.tvTheme)
         progress = findViewById(R.id.progressBar)
-
         repo = LLMRepository(this)
-
         btnShare = findViewById(R.id.btnShare)
-
         btnHistory = findViewById(R.id.btnHistory)
+        tvProviderStatus = findViewById(R.id.tvProviderStatus)
 
         tvOutput.movementMethod = ScrollingMovementMethod()
+    }
 
+    private fun setupClickListeners() {
         btnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
@@ -100,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCopy.setOnClickListener {
-            // Example: Log button click
+            // Log button click
             analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
                 param(FirebaseAnalytics.Param.ITEM_ID, "btnCopy")
                 param(FirebaseAnalytics.Param.ITEM_NAME, "copy")
@@ -116,12 +118,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         etInput.setOnEditorActionListener { _, actionId, _ ->
-
             analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
                 this.param(FirebaseAnalytics.Param.ITEM_ID, "etInput")
                 this.param(FirebaseAnalytics.Param.ITEM_NAME, "etInput")
                 this.param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
             }
+
             if (actionId == EditorInfo.IME_ACTION_GO) {
                 btnGenerate.performClick()
                 true
@@ -129,12 +131,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnShare.setOnClickListener {
-
             analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT) {
                 this.param(FirebaseAnalytics.Param.ITEM_ID, "btnShare")
                 this.param(FirebaseAnalytics.Param.ITEM_NAME, "btnShare")
                 this.param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
             }
+
             val promptText = tvOutput.text.toString()
             if (promptText.isNotBlank()) {
                 val sendIntent = Intent().apply {
@@ -154,7 +156,27 @@ class MainActivity : AppCompatActivity() {
                 this.param(FirebaseAnalytics.Param.ITEM_NAME, "btnHistory")
                 this.param(FirebaseAnalytics.Param.CONTENT_TYPE, "button")
             }
+
             startActivity(Intent(this, HistoryActivity::class.java))
+        }
+    }
+
+    private fun updateProviderStatus() {
+        lifecycleScope.launch {
+            val statusText = withContext(Dispatchers.Default) {
+                try {
+                    val provider = repo.getActiveProvider()
+                    val isConfigured = repo.isProviderConfigured()
+
+                    when {
+                        isConfigured -> "Provider: ${provider.config.displayName} ✓"
+                        else -> "Provider: ${provider.config.displayName} (not configured)"
+                    }
+                } catch (e: Exception) {
+                    "Provider: Error loading"
+                }
+            }
+            tvProviderStatus.text = statusText
         }
     }
 
@@ -165,6 +187,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onAdLoaded(interstitialAd: InterstitialAd) {
                     mInterstitialAd = interstitialAd
                 }
+
                 override fun onAdFailedToLoad(adError: LoadAdError) {
                     mInterstitialAd = null
                 }
@@ -181,27 +204,59 @@ class MainActivity : AppCompatActivity() {
         progress.visibility = View.VISIBLE
 
         lifecycleScope.launch {
-            val theme = classifyTheme(text)
-            tvTheme.text = "Theme: ${theme}"
-            val result = withContext(Dispatchers.IO) {
-                repo.generateRefinedPrompt(text, theme)
-            }
-            progress.visibility = View.GONE
-            if (result.isSuccessful) {
-                val cleaned = Utils.ensurePromptOnly(result.text)
-                if (Utils.isValidPrompt(cleaned)) {
-                    tvOutput.text = cleaned
-                    // Save to history
-                    HistoryStore.addRecord(
-                        this@MainActivity,
-                        PromptRecord(etInput.text.toString(), cleaned)
-                    )
-                } else {
-                    tvOutput.text = "Generated content blocked (not a prompt). Try rephrasing or change provider in settings."
+            try {
+                val theme = classifyTheme(text)
+                tvTheme.text = "Theme: $theme"
+
+                val result = withContext(Dispatchers.IO) {
+                    repo.generateRefinedPrompt(text, theme)
                 }
-            } else {
-                // After (correct)
-                tvOutput.text = "Error: ${result.errorMessage ?: "unknown"}"
+
+                progress.visibility = View.GONE
+
+                if (result.isSuccessful) {
+                    val cleaned = Utils.ensurePromptOnly(result.text)
+                    if (Utils.isValidPrompt(cleaned)) {
+                        tvOutput.text = cleaned
+
+                        // Save to history
+                        HistoryStore.addRecord(
+                            this@MainActivity,
+                            PromptRecord(etInput.text.toString(), cleaned)
+                        )
+
+                        // Show token usage if available
+                        result.usage?.let { usage ->
+                            val usageText = "Tokens used: ${usage.totalTokens} (${usage.promptTokens}+${usage.completionTokens})"
+                            Toast.makeText(this@MainActivity, usageText, Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        tvOutput.text = "Generated content blocked (not a prompt). Try rephrasing or change provider in settings."
+                    }
+                } else {
+                    val errorMessage = result.errorMessage ?: "Unknown error"
+                    tvOutput.text = "Error: $errorMessage"
+
+                    // Show helpful error message for common issues
+                    when {
+                        errorMessage.contains("API key") -> {
+                            Toast.makeText(this@MainActivity, "Please configure API key in settings", Toast.LENGTH_LONG).show()
+                        }
+                        errorMessage.contains("401") -> {
+                            Toast.makeText(this@MainActivity, "Invalid API key. Check settings.", Toast.LENGTH_LONG).show()
+                        }
+                        errorMessage.contains("429") -> {
+                            Toast.makeText(this@MainActivity, "Rate limit reached. Try again later.", Toast.LENGTH_LONG).show()
+                        }
+                        errorMessage.contains("Network") -> {
+                            Toast.makeText(this@MainActivity, "Network error. Check connection.", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                progress.visibility = View.GONE
+                tvOutput.text = "Error: ${e.message}"
+                FirebaseCrashlytics.getInstance().recordException(e)
             }
         }
     }
@@ -209,9 +264,10 @@ class MainActivity : AppCompatActivity() {
     // Lightweight keyword-based theme classification (fast, on-device)
     private fun classifyTheme(text: String): String {
         val t = text.lowercase()
-        val codeWords = listOf("code","javascript","python","api","sql","android","kotlin","java")
-        val storyWords = listOf("story","novel","character","prose","fiction","plot","scene")
-        val marketing = listOf("ad","advert","marketing","copy","slogan","headline","seo","blog")
+        val codeWords = listOf("code", "javascript", "python", "api", "sql", "android", "kotlin", "java")
+        val storyWords = listOf("story", "novel", "character", "prose", "fiction", "plot", "scene")
+        val marketing = listOf("ad", "advert", "marketing", "copy", "slogan", "headline", "seo", "blog")
+
         return when {
             codeWords.any { t.contains(it) } -> "code"
             storyWords.any { t.contains(it) } -> "story"

@@ -653,6 +653,7 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
+    <color name="accent_color">#45B7D1</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="accent_purple">#8A2BE2</color>
@@ -665,6 +666,7 @@
     <color name="background_main">#F5F3FF</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="border_color">#E8E8E8</color>
     <color name="border_light">#E5E7EB</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -745,7 +747,9 @@
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="divider">#F3F4F6</color>
+    <color name="divider_color">#EEEEEE</color>
     <color name="error">#EF4444</color>
+    <color name="error_color">#E74C3C</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
@@ -1011,12 +1015,14 @@
     <color name="purple_700">#6A5ACD</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
+    <color name="secondary_color">#4ECDC4</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="shadow">#00000020</color>
     <color name="success">#10B981</color>
+    <color name="success_color">#27AE60</color>
     <color name="surface_light">#F8F9FA</color>
     <color name="surface_white">#FFFFFF</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
@@ -1027,10 +1033,12 @@
     <color name="text_on_primary">#FFFFFF</color>
     <color name="text_primary">#1A1A1A</color>
     <color name="text_secondary">#6B7280</color>
+    <color name="text_white">#FFFFFF</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="warning">#F59E0B</color>
+    <color name="warning_color">#F39C12</color>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -1119,6 +1127,9 @@
     <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="button_height">48dp</dimen>
     <dimen name="button_height_large">56dp</dimen>
+    <dimen name="button_height_small">40dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_margin">8dp</dimen>
     <dimen name="card_padding">16dp</dimen>
     <dimen name="card_padding_large">20dp</dimen>
@@ -1188,6 +1199,7 @@
     <dimen name="design_textinput_caption_translate_y">5dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="edittext_height">48dp</dimen>
     <dimen name="elevation_button">4dp</dimen>
     <dimen name="elevation_card">8dp</dimen>
     <dimen name="elevation_fab">12dp</dimen>
@@ -1597,6 +1609,10 @@
     <dimen name="m3_timepicker_display_stroke_width">2dp</dimen>
     <dimen name="m3_timepicker_window_elevation">@dimen/m3_comp_time_picker_container_elevation</dimen>
     <dimen name="m3_toolbar_text_size_title">20dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_tiny">2dp</dimen>
     <dimen name="material_bottom_sheet_max_width">640dp</dimen>
     <dimen name="material_clock_display_height">80dp</dimen>
     <dimen name="material_clock_display_padding">24dp</dimen>
@@ -1865,6 +1881,7 @@
     <dimen name="spacing_tiny">4dp</dimen>
     <dimen name="spacing_xlarge">20dp</dimen>
     <dimen name="spacing_xxlarge">24dp</dimen>
+    <dimen name="spinner_height">48dp</dimen>
     <dimen name="splashscreen_icon_mask_size_no_background">410dp</dimen>
     <dimen name="splashscreen_icon_mask_size_with_background">342dp</dimen>
     <dimen name="splashscreen_icon_mask_stroke_no_background">109dp</dimen>
@@ -1878,6 +1895,10 @@
     <dimen name="text_size_heading1">32sp</dimen>
     <dimen name="text_size_heading2">24sp</dimen>
     <dimen name="text_size_heading3">20sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_tiny">10sp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
@@ -2174,6 +2195,9 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA7z1tXQTRfrx40NoYc_Z2Lr-xw_6R-_dw</string>
     <string name="google_storage_bucket" translatable="false">promptgen-bcea4.firebasestorage.app</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="history_empty">No history yet. Generate some prompts to see them here!</string>
+    <string name="history_subtitle">Your recent prompt generations:</string>
+    <string name="history_title">Prompt History</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
@@ -2214,6 +2238,7 @@
     <string description="Suffix for time in 12-hour standard, after noon. [CHAR_LIMIT=2]" name="material_timepicker_pm">PM</string>
     <string description="Title for the dialog with a time picker. [CHAR_LIMIT=32]" name="material_timepicker_select_time">Select time</string>
     <string name="material_timepicker_text_input_mode_description">Switch to text input mode for the time input.</string>
+    <string name="missing_endpoint">No endpoint configured. Open Settings.</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string name="mtrl_checkbox_button_icon_path_checked" translatable="false">M14,18.2 11.4,15.6 10,17 14,21 22,13 20.6,11.6z</string>
     <string name="mtrl_checkbox_button_icon_path_group_name" translatable="false">icon</string>
@@ -2323,6 +2348,16 @@
         \"<ns2:g example="Version 1.1" id="summary">%1$s</ns2:g>\" copied to clipboard.
     </string>
     <string name="project_id" translatable="false">promptgen-bcea4</string>
+    <string name="provider_cohere_free">Cohere (free)</string>
+    <string name="provider_cohere_preset">Cohere (preset)</string>
+    <string name="provider_custom">Custom</string>
+    <string name="provider_gemini_free">Google Gemini (free)</string>
+    <string name="provider_hf_community">Hugging Face (community)</string>
+    <string name="provider_hf_preset">HuggingFace (preset)</string>
+    <string name="provider_on_device">On-Device (local)</string>
+    <string name="provider_openai">OpenAI (preset)</string>
+    <string name="provider_openrouter_free">OpenRouter (free/credits)</string>
+    <string name="provider_perplexity">Perplexity</string>
     <string name="s1">Save image</string>
     <string name="s2">"Allow Ad to store image in Picture gallery?"</string>
     <string name="s3">Accept</string>
@@ -2336,6 +2371,7 @@
   </string>
     <string description="Content description for the X button to clear text [CHAR_LIMIT=NONE]" name="searchview_clear_text_content_description">Clear text</string>
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
+    <string name="settings_saved">Settings saved</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
     <string name="status_bar_notification_info_overflow">999+</string>

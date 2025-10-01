@@ -1,4 +1,26 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Prompt Enhancer</string>
+
+    <!-- Providers -->
+    <string name="provider_gemini_free">Google Gemini (free)</string>
+    <string name="provider_cohere_free">Cohere (free)</string>
+    <string name="provider_hf_community">Hugging Face (community)</string>
+    <string name="provider_openrouter_free">OpenRouter (free/credits)</string>
+    <string name="provider_on_device">On-Device (local)</string>
+    <string name="provider_openai">OpenAI (preset)</string>
+    <string name="provider_hf_preset">HuggingFace (preset)</string>
+    <string name="provider_cohere_preset">Cohere (preset)</string>
+    <string name="provider_perplexity">Perplexity</string>
+    <string name="provider_custom">Custom</string>
+
+    <!-- UI copy -->
+    <string name="settings_saved">Settings saved</string>
+    <string name="missing_endpoint">No endpoint configured. Open Settings.</string>
+
+    <!-- History Activity -->
+    <string name="history_title">Prompt History</string>
+    <string name="history_subtitle">Your recent prompt generations:</string>
+    <string name="history_empty">No history yet. Generate some prompts to see them here!</string>
+
 </resources>

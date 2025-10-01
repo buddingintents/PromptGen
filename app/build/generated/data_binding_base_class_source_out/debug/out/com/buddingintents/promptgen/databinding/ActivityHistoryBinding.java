@@ -4,43 +4,42 @@ package com.buddingintents.promptgen.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.buddingintents.promptgen.R;
-import com.google.android.gms.ads.AdView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityHistoryBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final AdView adView;
+  public final ListView listView;
 
   @NonNull
-  public final ListView listHistory;
+  public final TextView tvEmpty;
 
   @NonNull
-  public final TextView tvHistoryTitle;
+  public final TextView tvTitle;
 
-  private ActivityHistoryBinding(@NonNull LinearLayout rootView, @NonNull AdView adView,
-      @NonNull ListView listHistory, @NonNull TextView tvHistoryTitle) {
+  private ActivityHistoryBinding(@NonNull ConstraintLayout rootView, @NonNull ListView listView,
+      @NonNull TextView tvEmpty, @NonNull TextView tvTitle) {
     this.rootView = rootView;
-    this.adView = adView;
-    this.listHistory = listHistory;
-    this.tvHistoryTitle = tvHistoryTitle;
+    this.listView = listView;
+    this.tvEmpty = tvEmpty;
+    this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -65,26 +64,25 @@ public final class ActivityHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.adView;
-      AdView adView = ViewBindings.findChildViewById(rootView, id);
-      if (adView == null) {
+      id = R.id.listView;
+      ListView listView = ViewBindings.findChildViewById(rootView, id);
+      if (listView == null) {
         break missingId;
       }
 
-      id = R.id.listHistory;
-      ListView listHistory = ViewBindings.findChildViewById(rootView, id);
-      if (listHistory == null) {
+      id = R.id.tvEmpty;
+      TextView tvEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmpty == null) {
         break missingId;
       }
 
-      id = R.id.tvHistoryTitle;
-      TextView tvHistoryTitle = ViewBindings.findChildViewById(rootView, id);
-      if (tvHistoryTitle == null) {
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
         break missingId;
       }
 
-      return new ActivityHistoryBinding((LinearLayout) rootView, adView, listHistory,
-          tvHistoryTitle);
+      return new ActivityHistoryBinding((ConstraintLayout) rootView, listView, tvEmpty, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

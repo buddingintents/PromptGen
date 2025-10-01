@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ads="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background_main" android:padding="20dp">
-    <!-- Header Card -->
-    <androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="@dimen/padding_medium">
+
+    <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/CardView.Elevated"
-        android:layout_marginBottom="20dp">
+        android:text="@string/history_title"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/margin_medium"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/tvHistoryTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Prompt History"
-                style="@style/Text.Heading2"
-                android:gravity="center"
-                android:textColor="@color/primary_purple"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Your recent prompts and generations"
-                style="@style/Text.Body2"
-                android:gravity="center" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- List of records -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        style="@style/CardView.Elevated"
-        android:layout_marginBottom="16dp">
-
-        <ListView
-            android:id="@+id/listHistory"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/divider"
-            android:dividerHeight="1dp"
-            android:listSelector="?android:attr/selectableItemBackground"
-            android:padding="8dp"
-            android:clipToPadding="false"
-            android:scrollbars="vertical"
-            android:background="@color/surface_white" />
-    </androidx.cardview.widget.CardView>
+            android:orientation="vertical"
+            android:padding="@dimen/padding_medium">
 
-    <!-- Banner Ad at the bottom -->
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
-</LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/history_subtitle"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="@dimen/margin_small"/>
+
+            <!-- CORRECT ID: listView -->
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/margin_small"/>
+
+            <!-- Empty state view -->
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/history_empty"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

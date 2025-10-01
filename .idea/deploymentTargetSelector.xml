@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="PromptGen">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-09-28T14:25:36.231869Z">
+        <DropdownSelection timestamp="2025-09-30T19:45:37.010881200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="PhysicalDevice" identifier="serial=RZCWA1260BK" />

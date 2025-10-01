@@ -10,7 +10,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        val listView: ListView = findViewById(R.id.listHistory)
+        val listView: ListView = findViewById(R.id.listView)
         val records = HistoryStore.getRecords(this)
 
         listView.adapter = HistoryAdapter(this, records)

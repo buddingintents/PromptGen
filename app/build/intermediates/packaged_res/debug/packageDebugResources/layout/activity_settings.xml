@@ -1,164 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background_main" android:padding="20dp" android:scrollbars="vertical">
-    <LinearLayout
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:padding="@dimen/padding_medium">
 
-        <!-- Header Card -->
-        <androidx.cardview.widget.CardView
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/CardView.Elevated"
-            android:layout_marginBottom="24dp">
+            android:text="Provider Settings"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="@dimen/margin_medium"/>
+
+        <!-- Active Provider Display -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardActiveProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            android:layout_marginBottom="@dimen/margin_medium">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="24dp">
+                android:padding="@dimen/padding_medium">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
-                    style="@style/Text.Heading2"
-                    android:gravity="center"
-                    android:textColor="@color/primary_purple"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Configure your AI provider and preferences"
-                    style="@style/Text.Body2"
-                    android:gravity="center" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Provider Settings Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/CardView.Elevated"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="AI Provider"
-                    style="@style/Text.Body1"
+                    android:text="Currently Active Provider"
+                    android:textSize="@dimen/text_size_medium"
                     android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_small"/>
+
+                <TextView
+                    android:id="@+id/tvActiveProvider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Active Provider: Loading..."
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/input_background"
+                    android:padding="@dimen/padding_small"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Provider Configuration -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardProviderConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintTop_toBottomOf="@id/cardActiveProvider"
+            android:layout_marginBottom="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Configure Provider"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_medium"/>
+
+                <!-- Provider Selection -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Provider:"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_tiny"/>
 
                 <Spinner
                     android:id="@+id/spinnerProvider"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_height="@dimen/spinner_height"
                     android:background="@drawable/input_background"
-                    android:padding="16dp"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_marginBottom="@dimen/margin_medium"/>
 
+                <!-- API Key Input -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="API Key / Bearer Token"
-                    style="@style/Text.Body1"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Enter your API key for the selected provider"
-                    style="@style/Text.Caption"
-                    android:layout_marginBottom="12dp" />
+                    android:text="API Key:"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_tiny"/>
 
                 <EditText
                     android:id="@+id/etApiKey"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Paste your API key here"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/input_background"
+                    android:padding="@dimen/padding_medium"
+                    android:hint="Enter your API key"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
                     android:inputType="textPassword"
-                    style="@style/EditText.Modern"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_marginBottom="@dimen/margin_medium"/>
 
+                <!-- Custom Endpoint -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Custom Endpoint (Optional)"
-                    style="@style/Text.Body1"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Leave empty to use default provider endpoint"
-                    style="@style/Text.Caption"
-                    android:layout_marginBottom="12dp" />
+                    android:text="Custom Endpoint (Optional):"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_tiny"/>
 
                 <EditText
                     android:id="@+id/etEndpoint"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="https://api.example.com/v1/chat/completions"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/input_background"
+                    android:padding="@dimen/padding_medium"
+                    android:hint="Custom API endpoint URL"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
                     android:inputType="textUri"
-                    style="@style/EditText.Modern" />
+                    android:layout_marginBottom="@dimen/margin_medium"/>
+
+                <!-- Custom Model -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Model (Optional):"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_tiny"/>
+
+                <EditText
+                    android:id="@+id/etCustomModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/input_background"
+                    android:padding="@dimen/padding_medium"
+                    android:hint="Custom model name"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:inputType="text"
+                    android:layout_marginBottom="@dimen/margin_medium"/>
+
+                <!-- Provider Notes -->
+                <TextView
+                    android:id="@+id/tvProviderNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select a provider above for configuration details and instructions."
+                    android:textSize="@dimen/text_size_tiny"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/input_background"
+                    android:padding="@dimen/padding_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"/>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_primary"
+                        android:text="Save Configuration"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_marginEnd="@dimen/margin_small"/>
+
+                    <Button
+                        android:id="@+id/btnSetActive"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_secondary"
+                        android:text="Set Active"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_marginEnd="@dimen/margin_small"/>
+
+                    <Button
+                        android:id="@+id/btnDelete"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_secondary"
+                        android:text="Delete"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_small"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Save Button -->
-        <Button
-            android:id="@+id/btnSave"
+        <!-- Configured Providers List -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardConfiguredProviders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Settings"
-            style="@style/Button.Primary"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Info Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/CardView.Elevated"
-            android:layout_marginBottom="20dp">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintTop_toBottomOf="@id/cardProviderConfig"
+            android:layout_marginBottom="@dimen/margin_large">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="@dimen/padding_medium">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="💡 Provider Information"
-                    style="@style/Text.Body1"
+                    android:text="Configured Providers"
+                    android:textSize="@dimen/text_size_medium"
                     android:textStyle="bold"
-                    android:layout_marginBottom="12dp" />
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="@dimen/margin_small"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="-  OpenAI: Uses GPT-4o for high-quality prompts
-HuggingFace: Free tier with various models
+                    android:text="Tap any provider to edit its configuration"
+                    android:textSize="@dimen/text_size_tiny"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="@dimen/margin_small"/>
 
-Cohere: Great for business/marketing prompts
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvConfiguredProviders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
 
-Perplexity: Research-oriented prompts
-
-Custom: Use your own API endpoint"
-                    style="@style/Text.Body2"
-                    android:lineSpacingExtra="2dp" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
